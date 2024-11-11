@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from "dotenv"
-
+import cookieParser from 'cookie-parser';
 
 const app = express()
 
@@ -12,7 +12,7 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 
 app.use(express.json()) // allows to parse incoming requests with JSON payloads : req.body
-
+app.use(cookieParser())
 //routes
 app.get('/',(req,res)=>{
     res.send('Hi')
