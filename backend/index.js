@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from "dotenv"
 import cookieParser from 'cookie-parser';
+import cors from 'cors'
 
 const app = express()
 
@@ -10,6 +11,8 @@ import authRoutes from './routes/authRoute.js'
 dotenv.config();
 //console.log(process.env.PORT)
 const port = process.env.PORT || 3000;
+
+app.use(cors({origin: 'https://localhost:5173', credentials:true}))
 
 app.use(express.json()) // allows to parse incoming requests with JSON payloads : req.body
 app.use(cookieParser())

@@ -219,7 +219,7 @@ export const checkAuth = async (req, res)=>{
    
     try{
 
-        let user = await userModel.findById(req.userId).select("-password");
+        let user = await userModel.findById (req.userId).select("-password");
 
         if (!user) {
             return res.status(400).json({ success: false, message: "User not found" });
