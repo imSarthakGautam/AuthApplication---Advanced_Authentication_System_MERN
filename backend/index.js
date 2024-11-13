@@ -12,7 +12,7 @@ dotenv.config();
 //console.log(process.env.PORT)
 const port = process.env.PORT || 3000;
 
-app.use(cors({origin: 'https://localhost:5173', credentials:true}))
+app.use(cors({origin: 'http://localhost:5173', credentials:true}))
 
 app.use(express.json()) // allows to parse incoming requests with JSON payloads : req.body
 app.use(cookieParser())
