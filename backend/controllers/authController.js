@@ -102,6 +102,7 @@ export const verifyEmail = async (req, res)=>{
 
 //---------- L O G I N ---------
 export const login = async (req, res)=>{
+    console.log('login triggered')
     let { email, password} = req.body
     const hashedPassword = await bcryptjs.hash(password, 10)
     try{
@@ -110,12 +111,14 @@ export const login = async (req, res)=>{
         
         // Check if user exists and password is correct
         if (!user || !(await bcryptjs.compare(password, user.password))) {
+            console.log('username/pw incorrect')
             return res.status(400).json({ success: false, message: 'Username or Password incorrect' });
         }
         
         generateTokenAndSetCookie(res, user._id);
         user.lastLogin= Date.now();
         await user.save()
+        console.log('login success')
         res.status(200).json({
             success:true,
             message: "login successful",
@@ -123,6 +126,7 @@ export const login = async (req, res)=>{
                 ...user._doc,
                 password: undefined,
             }
+
         });
         
     } catch (err){
@@ -165,7 +169,7 @@ export const forgotPassword = async (req, res)=>{
 
         //send password reset email
         //instead of giving reset p/w token redirect to page with token in URL
-        await sendResetPasswordEmail(user.email, `${process.env.CLIENT_URL}/${resetToken}`)
+        await sendResetPasswordEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`)
 
 
 
@@ -185,7 +189,7 @@ export const forgotPassword = async (req, res)=>{
 export const resetPassword = async (req, res)=>{
     console.log('inside reset password')
     const {token}= req.params //--------- resetpw/:token
-    const { password, cpassword } = req.body
+    const { password} = req.body
     try{
 
         let user = await userModel.findOne({
@@ -197,9 +201,6 @@ export const resetPassword = async (req, res)=>{
             return res.status(400).json({ success: false, message: "Token Expired or doesn't exists" });
         }
 
-        if (password !== cpassword) {
-            return res.status(400).json({ success: false, message: "Password do not match" });
-        }
 
         user.password=await bcryptjs.hash(password, 10)
         user.resetPasswordToken = undefined;
@@ -225,6 +226,7 @@ export const checkAuth = async (req, res)=>{
     try{
 
         let user = await userModel.findById (req.userId).select("-password");
+        console.log(user)
 
         if (!user) {
             return res.status(400).json({ success: false, message: "User not found" });
@@ -238,5 +240,6 @@ export const checkAuth = async (req, res)=>{
 
     } catch (err){
         console.log('Auth check Error:', err.message)
+        res.status(500).json({ success: false, message: "Server error: authCheck" });
     }
 }

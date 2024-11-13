@@ -15,13 +15,13 @@ This project includes building a robust and secured backend authentication syste
 ```bash
 npm install express cookie-parser mailtrap bcryptjs dotenv jsonwebtoken mongoose crypto
 ```
-[More about these packages](aboutPackages.md)
+[More about these packages](./notes/aboutPackages.md)
 
 ## Notes
 
-- [Handling Password Reset and Email Verification](handling_Password_reset%20_and_email_verification.md)
+- [Handling Password Reset and Email Verification](./notes/handling_Password_reset%20_and_email_verification.md)
 
-- [Sending Emails via : Mailtrap](sending_emails_via_Mailtrap.md)
+- [Sending Emails via : Mailtrap](./notes/sending_emails_via_Mailtrap.md)
 
 
 ## Frontend Setup
@@ -52,6 +52,8 @@ npm i lucide-react
 ```bash
 npm install zustand
 ```
-npm i axios
 
+```
+npm i axios
 npm i react-hot-toast
+```

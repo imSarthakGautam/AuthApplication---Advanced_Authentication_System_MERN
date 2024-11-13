@@ -1,19 +1,29 @@
 import React from 'react'
 import Input from '../components/Input'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 import { motion } from "framer-motion";
 import {Lock, Mail, Loader} from 'lucide-react'
+import { useAuthStore } from '../store/authStore';
+
 
 function LoginPage() {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
     //change
-    const isLoading= false;
+    const navigate = useNavigate()
+    const {error, login, isLoading}= useAuthStore()
 
-    const handleLogin =(ev)=>{
-        ev.preventDefault;
+    const handleLogin = async (ev)=>{
+        ev.preventDefault();
+        try{
+           await login(email, password);
+           navigate('/')
+
+        } catch (error){
+            console.log('Error in loginPage')
+        }
     }
     
 
@@ -52,6 +62,8 @@ function LoginPage() {
 							Forgot password?
 						</Link>
 					</div>
+
+                    {error && <p className='text-red-500 font-semibold mb-2'>{error}</p>}
 
                     <motion.button
 						whileHover={{ scale: 1.02 }}
