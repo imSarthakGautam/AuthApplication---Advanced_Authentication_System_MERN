@@ -6,6 +6,7 @@ import {
   sendVerificationEmail,
   sendResetPasswordEmail,
   sendResetPasswordSuccessEmail,
+  sendWelcomeEmail,
 } from "../mailtrap/emails.js";
 import crypto from 'crypto'
 
@@ -79,6 +80,9 @@ export const verifyEmail = async (req, res)=>{
         user.verificationTokenExpiresAt= undefined;
 
         await user.save();
+
+        await sendWelcomeEmail(user.email, user.name);
+
         res.status(200).json({
             success: true,
             message:'user verified',
@@ -90,8 +94,9 @@ export const verifyEmail = async (req, res)=>{
         });
     
     
-    } catch (err){
-        console.log('verify email:', err.message)
+    } catch (error){
+        console.log("error in verifyEmail ", error);
+		res.status(500).json({ success: false, message: "Server error" });
     }
 }
 
