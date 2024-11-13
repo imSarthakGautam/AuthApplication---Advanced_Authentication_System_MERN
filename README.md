@@ -6,35 +6,64 @@ This AuthApplication project is a robust backend authentication system with enha
 
 - **User Signup and Login**:  
 Basic registration and login functionality with secure password handling.
+
+<div align="center">
 <img src="./frontend/public/images/signup.png" alt="Signup" width="60%" height="60%">
+</div>
+
+<div align="center">
 <img src="./frontend/public/images/login.png" alt="Login" width="60%" height="60%">
+</div>
 
 
 
 
 - **Email Verification**:  
 Verify user accounts through email verification codes.
+
+<div align="center">
 <img src="./frontend/public/images/verify-email.png" alt="Verify Email" width="60%" height="60%">
+</div>
+
+<div align="center">
 <img src="./frontend/public/images/verify-email-otp.png" alt="OTP" width="60%" height="60%">
+</div>
 
 - **Password Recovery**:  
 Secure password recovery flow for resetting forgotten passwords.
 
+<div align="center">
 <img src="./frontend/public/images/forgot-password.png" alt="Forgot Password" width="60%" height="60%">
+</div>
+
+<div align="center">
 <img src="./frontend/public/images/forgot-password2.png" alt="Check Email" width="60%" height="60%">
+</div>
+
+<div align="center">
 <img src="./frontend/public/images/resetPassword.png" alt="Reset Password" width="60%" height="60%">
+</div>
 
 
 - **Email Notifications**:  
   
 Send verification, welcome, and password reset emails.
+
+<div align="center">
 <img src="./frontend/public/images/welcomeEmail.png" alt="Welcome Email" width="60%" height="60%">
+</div>
+
+<div align="center">
 <img src="./frontend/public/images/resetPassword_mail.png" alt="Reset Password Email" width="60%" height="60%">
+</div>
 
 
 - **Protected Routes**:    
 Route protection using JWT-based authentication, ensuring secure access to specific parts of the application.
+
+<div align="center">
 <img src="./frontend/public/images/Dashboard.png" alt="Dashboard" width="60%" height="60%">
+</div>
 
 ## Tech Stack
 
