@@ -6,31 +6,35 @@ This AuthApplication project is a robust backend authentication system with enha
 
 - **User Signup and Login**:  
 Basic registration and login functionality with secure password handling.
+<img src="./frontend/public/images/signup.png" alt="Signup" width="60%" height="60%">
+<img src="./frontend/public/images/login.png" alt="Login" width="60%" height="60%">
 
-![Signup](./frontend/public/images/signup.png | width =100)
-![Login](./frontend/public/images/login.png)
+
+
 
 - **Email Verification**:  
 Verify user accounts through email verification codes.
-![Verify-email](./frontend/public/images/verify-email.png)
-![OTP](./frontend/public/images/verify-email-otp.png)
+<img src="./frontend/public/images/verify-email.png" alt="Verify Email" width="60%" height="60%">
+<img src="./frontend/public/images/verify-email-otp.png" alt="OTP" width="60%" height="60%">
 
 - **Password Recovery**:  
 Secure password recovery flow for resetting forgotten passwords.
-![forgot-password](./frontend/public/images/forgot-password.png)
-![check email](./frontend/public/images/forgot-password2.png)
-![reset password](./frontend/public/images/resetPassword.png)
+
+<img src="./frontend/public/images/forgot-password.png" alt="Forgot Password" width="60%" height="60%">
+<img src="./frontend/public/images/forgot-password2.png" alt="Check Email" width="60%" height="60%">
+<img src="./frontend/public/images/resetPassword.png" alt="Reset Password" width="60%" height="60%">
 
 
 - **Email Notifications**:  
   
 Send verification, welcome, and password reset emails.
-![Welcome Email](./frontend/public/images/welcomeEmail.png)
-![Reset Password](./frontend/public/images/resetPassword_mail.png)
+<img src="./frontend/public/images/welcomeEmail.png" alt="Welcome Email" width="60%" height="60%">
+<img src="./frontend/public/images/resetPassword_mail.png" alt="Reset Password Email" width="60%" height="60%">
+
 
 - **Protected Routes**:    
 Route protection using JWT-based authentication, ensuring secure access to specific parts of the application.
-![Dashboard](./frontend/public/images/Dashboard.png)
+<img src="./frontend/public/images/Dashboard.png" alt="Dashboard" width="60%" height="60%">
 
 ## Tech Stack
 
@@ -126,10 +130,6 @@ See [aboutPackages.md](./notes/aboutPackages.md) for a detailed explanation of e
 - [Handling Password Reset and Email Verification](./notes/handling_Password_reset%20_and_email_verification.md)
 - [Sending Emails via Mailtrap](./notes/sending_emails_via_Mailtrap.md)
 
-## Sample API Endpoints
-Here's the edited `README.md` section for your API Endpoints, based on your provided list:
-
----
 
 ## Sample API Endpoints
 
