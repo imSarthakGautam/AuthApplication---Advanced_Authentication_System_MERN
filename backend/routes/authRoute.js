@@ -16,9 +16,7 @@ import {protectRoute} from '../middleware/protectRoute.js'
 router.get('/check-auth', protectRoute, checkAuth)
 
 router.post('/signup', signup)
-router.get('/signup', (req, res)=>{
-    res.send('hi')
-})
+
 router.post('/login', login)
 router.post('/logout', logout)
 
